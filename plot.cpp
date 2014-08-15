@@ -133,6 +133,12 @@ void disp_text(float xm, float ym)
 		strcpy_s(yprint,"");
 }
 
+void disp_static_points(char *msg)
+{
+	while( *msg)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12,*msg++);
+}
+
 void display()
 {
 	draw_axes(); //draws the x-axis and y-axis	
@@ -146,6 +152,23 @@ void display()
 		glVertex2f(xm,ym);
 		glEnd();
 		glFlush();
+		
+		glColor3f(1,1,0);
+		glRasterPos2f(50,-400);
+		disp_static_points("[0,0]");
+
+		glRasterPos2f(9100,-400);
+		disp_static_points("[10000,0]");
+
+		glRasterPos2f(-9950,-400);
+		disp_static_points("[-10000,0]");
+
+		glRasterPos2f(50,9600);
+		disp_static_points("[0,10000]");
+
+		glRasterPos2f(50,-9850);
+		disp_static_points("[0,-10000]");
+		
 		glutSwapBuffers();
 }
 
