@@ -15,11 +15,11 @@ vector <float> vect_coordx,vect_coordy;
 int main()
 {
   string line;
+
+//Paths of the input and output files
   ifstream in_stream ("C:\\Users\\Anirudh\\Desktop\\nmea_log.txt");
   ofstream gllLog("C:\\Users\\Anirudh\\Desktop\\gllLog.txt",ios::trunc);
   ifstream gll_in_stream ("C:\\Users\\Anirudh\\Desktop\\gllLog.txt");
-
-
 
   string gll_line;
 
@@ -36,7 +36,7 @@ int main()
   }
   else
   { 
-	  cout << "Unable to open test.txt";
+	  cout << "Unable to open nmea_log.txt";
 	  system("hit any key to continue");
   }
 
